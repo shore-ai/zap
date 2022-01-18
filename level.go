@@ -21,8 +21,8 @@
 package zap
 
 import (
+	"github.com/shore-ai/zap/zapcore"
 	"go.uber.org/atomic"
-	"go.uber.org/zap/zapcore"
 )
 
 const (

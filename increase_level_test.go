@@ -24,9 +24,9 @@ import (
 	"bytes"
 	"testing"
 
+	"github.com/shore-ai/zap/zapcore"
+	"github.com/shore-ai/zap/zaptest/observer"
 	"github.com/stretchr/testify/assert"
-	"go.uber.org/zap/zapcore"
-	"go.uber.org/zap/zaptest/observer"
 )
 
 func newLoggedEntry(level zapcore.Level, msg string, fields ...zapcore.Field) observer.LoggedEntry {
