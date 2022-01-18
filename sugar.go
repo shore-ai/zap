@@ -21,6 +21,7 @@
 package zap
 
 import (
+	"context"
 	"fmt"
 
 	"go.uber.org/zap/zapcore"
@@ -90,6 +91,15 @@ func (s *SugaredLogger) Named(name string) *SugaredLogger {
 // panics in development and errors in production.
 func (s *SugaredLogger) With(args ...interface{}) *SugaredLogger {
 	return &SugaredLogger{base: s.base.With(s.sweetenFields(args)...)}
+}
+
+func (s *SugaredLogger) WithCtx(ctx context.Context) *SugaredLogger {
+	key := "traceId"
+	val := ctx.Value(key)
+	if val == nil {
+		return s
+	}
+	return &SugaredLogger{base: s.base.With(Any(key, val))}
 }
 
 // Debug uses fmt.Sprint to construct and log a message.
