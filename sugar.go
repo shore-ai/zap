@@ -94,7 +94,7 @@ func (s *SugaredLogger) With(args ...interface{}) *SugaredLogger {
 }
 
 func (s *SugaredLogger) WithCtx(ctx context.Context) *SugaredLogger {
-	key := "traceId"
+	key := "traceid"
 	val := ctx.Value(key)
 	if val == nil {
 		return s
