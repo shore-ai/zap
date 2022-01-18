@@ -27,7 +27,7 @@ import (
 	"runtime"
 	"strings"
 
-	"go.uber.org/zap/zapcore"
+	"github.com/shore-ai/zap/zapcore"
 )
 
 // A Logger provides fast, leveled, structured logging. All methods are safe

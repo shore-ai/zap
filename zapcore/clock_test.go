@@ -24,7 +24,7 @@ import (
 	"testing"
 	"time"
 
-	"go.uber.org/zap/internal/ztest"
+	"github.com/shore-ai/zap/internal/ztest"
 )
 
 // Verify that the mock clock satisfies the Clock interface.
